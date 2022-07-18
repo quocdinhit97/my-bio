@@ -1,0 +1,317 @@
+/* Google font  */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;900&display=swap');
+
+:root {
+
+    --hue: 207;
+    --sat: 90%;
+    --lig: 61%;
+
+    --first-color: hsl(var(--hue), var(--sat), var(--lig));
+    --firse-color-alt: hsl(var(--hue), var(--sat), 57%);
+    --title-color: hsl(var(--hue), 12%, 15%);
+    --text-color:hsl(var(--hue), 12%, 45%);
+    --text-color-light: hsl(var(--hue), 8%, 75%);
+    --text-color-lighten: hsl(var(--hue), 8%, 92%);
+    --body-color: hsl(var(--hue), 100%, 99%);
+    --container-color: #fff;
+
+    /*.25rem = 4px / .5rem = 8px / 1rem = 16px */
+    --body-font: 'Poppins', sans-serif;
+    --h2-font-size: 1.25rem;     /* 20px */
+    --h3-font-size: 1rem;        /* 16px */
+    --normal-font-size: .938rem; /* ~15px */
+    --small-font-size: .813rem;  /* ~13px */
+    --smaller-font-size: .75rem; /* 12px */
+
+    --first-social-color: #272A3A;
+    --first-social-color-light: #8A8EAA;
+    --first-social-color-lighten: #F8F8FC;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --h2-font-size: 1.5rem;     /* 24px */
+        --h3-font-size: 1.25rem;        /* 20px */
+        --normal-font-size: 1rem;      /* 16px */
+        --small-font-size: .938rem;   /* ~15px */
+        --smaller-font-size: .813rem; /* ~13px */
+    }
+}
+
+
+/* Base css */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: .3s;
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Reusable css  */
+.container {
+    max-width: 968px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+
+/* Profile  */
+.profile {
+    position: relative;
+    padding-top: 3rem;
+}
+
+.profile__container {
+    row-gap: 2rem;
+}
+
+.profile__data {
+    display: grid;
+    text-align: center;
+}
+
+.profile__perfil {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(180deg, 
+    hsla(var(--hue), var(--sat), var(--lig), 1) 0%, 
+    hsla(var(--hue), var(--sat), var(--lig), .2) 100%);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.profile__border {
+    border: 3.5px solid var(--first-color);
+    justify-self: center;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-bottom: .75rem;
+    position: relative;
+}
+
+.profile__name {
+    font-size: var(--h2-font-size);
+}
+
+.profile__profession {
+    font-size: var(--smaller-font-size);
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.profile__social {
+    display: flex;
+    justify-content: center;
+    column-gap: .75rem;
+}
+
+.profile__social-link {
+    font-size: 1.5rem;
+    transition: .3s;
+}
+
+.profile__social-ms {
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+.profile__social-tele {
+    background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+.profile__social-skype {
+    background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+.profile__check {
+    position: absolute;
+    font-size: 1.25rem;
+    color: var(--first-color);
+    bottom: 0;
+    right: 0;
+}
+
+.profile__check i {
+    border: 1px solid white;
+    border-radius: 50px;
+    background-color: white;
+}
+
+/* Social */
+
+.social, .social__container {
+    display: grid;
+}
+
+.social {
+    align-items: center;
+    justify-content: center;
+}
+
+.social__container {
+    row-gap: 1rem;
+    padding: 0 1rem;
+}
+
+.social__card, .social__data {
+    display: flex;
+    align-items: center;
+}
+
+.social__card {
+    width: 360px;
+    justify-content: space-between;
+    padding: .75rem 1.25rem .75rem .75rem;
+    background-color: var(--body-color);
+    box-shadow: 4px 4px 16px #E1E1E1, -2px -2px 16px #FFF;
+    border-radius: 2.5rem;
+}
+
+.social__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.social__name {
+    font-size: var(--normal-font-size);
+    color: var(--first-color);
+    font-weight: 500;
+}
+
+.social__profession {
+    font-size: var(--smaller-font-size);
+    color: var(--first-social-color-light);
+}
+
+.social__card:hover {
+    transform: scale(1.025);
+}
+
+.social__title {
+    text-align: center;
+    font-size: var(--h2-font-size);
+}
+
+
+/* change theme */
+.change-theme {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: .3;
+}
+
+.change-theme:hover {
+    color: var(--first-color);
+}
+
+/* variables dark theme */
+body.dark-theme {
+    --title-color: hsl(var(--hue), 12%, 95%);
+    --text-color:hsl(var(--hue), 12%, 75%);
+    --body-color: hsl(var(--hue), 70%, 8%);
+    --container-color: hsl(var(--hue), 24%, 12%);
+}
+.dark-theme .social__card {
+    box-shadow: 4px 4px 16px #000000, -2px -2px 16px #3b3b3b;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 320px) {
+    .profile  {
+        padding-top: 1rem;
+    }
+
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .social__title {
+        font-size: var(--normal-font-size);
+    }
+
+    .social__card {
+        width: 280px;
+        padding: .25rem;
+    }
+
+    .social__img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media screen and (min-width: 360px){
+    .social__card {
+            width: 280px;
+            padding: .25rem;
+    }
+}
+
+@media screen and (min-width: 1200px){ 
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+     .profile  {
+        padding-top: 1.5rem;
+    }
+
+    .social__img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
